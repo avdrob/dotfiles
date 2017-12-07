@@ -11,8 +11,8 @@ set noexpandtab
 set colorcolumn=81
 set number
 
-set laststatus=2
-set statusline=%f\ %LL\ %cc\ %p%%
+" set laststatus=2
+" set statusline=%f\ %LL\ %cc\ %p%%
 
 set hlsearch
 set showmode
@@ -21,3 +21,32 @@ map <Esc>n :tabe <CR>
 map <Esc>w :tabc <CR>
 map <Esc>h :tabp <CR>
 map <Esc>l :tabn <CR>
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'ctrlpvim/ctrlp.vim'
+
+call vundle#end()            " required
+
+" set vim-airline theme
+let g:airline_theme ='alduin'
+
+" set recommended settings for syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+nmap <F8> :TagbarToggle<CR>
