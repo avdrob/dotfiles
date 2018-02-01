@@ -8,7 +8,10 @@ case $- in
       *) return;;
 esac
 
-# Export some variables                                                          
+# Set options
+set -o vi
+
+# Export some variables
 export DEBFULLNAME="Andrey Drobyshev"
 export DEBEMAIL="immortalguardian1@gmail.com"
 
@@ -103,6 +106,8 @@ alias la='ls -A'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+alias t='todo-txt'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
