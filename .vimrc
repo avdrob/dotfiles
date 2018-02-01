@@ -9,7 +9,7 @@ set shiftwidth=8
 set noexpandtab
 
 set colorcolumn=81
-set number
+set relativenumber
 
 " set laststatus=2
 " set statusline=%f\ %LL\ %cc\ %p%%
@@ -31,18 +31,24 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'tpope/vim-fugitive'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'jceb/vim-orgmode'
 
 call vundle#end()            " required
+
+" enable git branch indicator
+let g:airline#extensions#branch#enabled = 1
 
 " set vim-airline theme
 let g:airline_theme ='alduin'
 
 " set recommended settings for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
