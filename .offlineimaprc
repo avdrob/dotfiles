@@ -1,0 +1,98 @@
+[general]
+accounts = drmtmych@gmail, immortalguardian1@gmail, drmtmych@virtuozzo.mipt, drobyshev@phystech
+starttls = yes
+ssl = yes
+pythonfile = ~/.config/mutt/credentials/imappwd.py
+maxsyncaccounts = 4
+ui = syslog
+
+[Account drmtmych@gmail]
+
+localrepository = drmtmych@gmail-local
+remoterepository = drmtmych@gmail-remote
+
+autorefresh = 0.5
+quick = 10
+
+[Repository drmtmych@gmail-remote]
+type = Gmail
+remoteuser = drmtmych@gmail.com
+remotepasseval = mailpasswd("drmtmych@gmail")
+remotehost = imap.gmail.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+port = 993
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+
+# keepalive = 60
+# holdconnectionopen = yes
+
+[Repository drmtmych@gmail-local]
+type = Maildir
+localfolders = ~/.mail/drmtmych@gmail
+
+[Account immortalguardian1@gmail]
+
+localrepository = immortalguardian1@gmail-local
+remoterepository = immortalguardian1@gmail-remote
+
+autorefresh = 0.5
+quick = 10
+
+[Repository immortalguardian1@gmail-remote]
+type = IMAP
+remoteuser = immortalguardian1@gmail.com
+remotepasseval = mailpasswd("immortalguardian1@gmail")
+remotehost = imap.gmail.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+port = 993
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+
+# keepalive = 60
+# holdconnectionopen = yes
+
+[Repository immortalguardian1@gmail-local]
+type = Maildir
+localfolders = ~/.mail/immortalguardian1@gmail
+
+[Account drmtmych@virtuozzo.mipt]
+
+localrepository = drmtmych@virtuozzo.mipt-local
+remoterepository = drmtmych@virtuozzo.mipt-remote
+
+autorefresh = 0.5
+quick = 10
+
+[Repository drmtmych@virtuozzo.mipt-remote]
+type = IMAP
+cert_fingerprint = 96ad94bca6f94b4644e312387ebe905509696b98
+remotepasseval = mailpasswd("drmtmych@virtuozzo.mipt")
+remotehost = parallels.mipt.ru
+remoteport = 993
+ssl = yes
+# sslclientcert = /etc/ca-certificates/extracted/ca-bundle.trust.crt
+# sslcacertfile = /etc/ca-certificates/extracted/ca-bundle.trust.crt
+remoteuser = drmtmych
+
+[Repository drmtmych@virtuozzo.mipt-local]
+type = Maildir
+localfolders = ~/.mail/drmtmych@virtuozzo.mipt
+
+[Account drobyshev@phystech]
+
+localrepository = drobyshev@phystech-local
+remoterepository = drobyshev@phystech-remote
+
+autorefresh = 0.5
+quick = 10
+
+[Repository drobyshev@phystech-remote]
+type = IMAP
+remoteuser = drobyshev@phystech.edu
+remotepasseval = mailpasswd("drobyshev@phystech")
+remotehost = imap.gmail.com
+port = 993
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Repository drobyshev@phystech-local]
+type = Maildir
+localfolders = ~/.mail/drobyshev@phystech
