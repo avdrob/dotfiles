@@ -126,15 +126,10 @@ export LC_TIME=ru_RU.UTF8
 SCRWDTH=$(stty size | awk '{print $2}')
 
 # Add some greetings
-if [[ -n $(which screenfetch) ]]
-then
-	GREET=$(screenfetch -c 9,19)
-	GRWDTH=$(echo "$GREET" | awk 'BEGIN {max = 1} {l = length($0); if (l > max)\
-		max = l} END {printf ("%d\n", max)}')
-	if [ "$SCRWDTH" -ge "$GRWDTH" ]
-	then
-		echo "$GREET"
-	fi
+GREETING="neofetch"
+which $GREETING 2>&1 1>/dev/null
+if [ $? -eq 0 ]; then
+	$GREETING
 fi
 
 # Change command prompt in case it is long for current screen width
