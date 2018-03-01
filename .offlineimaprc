@@ -4,7 +4,6 @@ starttls = yes
 ssl = yes
 pythonfile = ~/.config/mutt/credentials/imappwd.py
 maxsyncaccounts = 4
-ui = syslog
 
 [Account drmtmych@gmail]
 
@@ -69,8 +68,6 @@ remotepasseval = mailpasswd("drmtmych@virtuozzo.mipt")
 remotehost = parallels.mipt.ru
 remoteport = 993
 ssl = yes
-# sslclientcert = /etc/ca-certificates/extracted/ca-bundle.trust.crt
-# sslcacertfile = /etc/ca-certificates/extracted/ca-bundle.trust.crt
 remoteuser = drmtmych
 
 [Repository drmtmych@virtuozzo.mipt-local]
