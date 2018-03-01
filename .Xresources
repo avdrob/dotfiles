@@ -1,0 +1,57 @@
+URxvt.font: xft:Liberation\ Mono\ for\ Powerline:size=14
+URxvt.scrollStyle: rxvt
+URxvt.scrollBar: false
+
+urxvt*saveLines:            10000
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
+
+urxvt*urlLauncher:          chromium
+
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*shading: 15
+
+! Clickable URLs
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg14
+URxvt.colorUL: #4682B4
+
+! Base16 Ashes
+! Scheme: Jannik Siebert (https://github.com/janniks)
+
+URxvt*background:                     #1C2023
+URxvt*foreground:                     #C7CCD1
+URxvt*cursorColor:                    #C7CCD1
+
+URxvt*scrollColor:                    #C7CCD1
+URxvt*highlightColor:                 #565E65
+URxvt*highlightTextColor:             #ADB3BA
+
+URxvt*color0:                         #1C2023
+URxvt*color1:                         #C7AE95
+URxvt*color2:                         #95C7AE
+URxvt*color3:                         #AEC795
+URxvt*color4:                         #AE95C7
+URxvt*color5:                         #C795AE
+URxvt*color6:                         #95AEC7
+URxvt*color7:                         #C7CCD1
+URxvt*color8:                         #747C84
+URxvt*color9:                         #C7AE95
+URxvt*color10:                        #95C7AE
+URxvt*color11:                        #AEC795
+URxvt*color12:                        #AE95C7
+URxvt*color13:                        #C795AE
+URxvt*color14:                        #95AEC7
+URxvt*color15:                        #F3F4F5
+
+URxvt*color16:                        #C7C795
+URxvt*color17:                        #C79595
+URxvt*color18:                        #393F45
+URxvt*color19:                        #565E65
+URxvt*color20:                        #ADB3BA
+URxvt*color21:                        #DFE2E5
