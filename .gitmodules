@@ -1,3 +1,6 @@
 [submodule "zimfw"]
 	path = zimfw
 	url = https://github.com/zimfw/zimfw
+[submodule "mutt-wizard"]
+	path = mutt-wizard
+	url = https://github.com/LukeSmithxyz/mutt-wizard
