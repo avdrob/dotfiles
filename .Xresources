@@ -7,7 +7,8 @@ URxvt*scrollTtyOutput:      false
 URxvt*scrollWithBuffer:     true
 URxvt*scrollTtyKeypress:    true
 
-urxvt*urlLauncher:          chromium
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 URxvt*inheritPixmap: true
 URxvt*transparent: true
@@ -20,6 +21,7 @@ URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg14
 URxvt.colorUL: #4682B4
+URxvt*urlLauncher: chromium
 
 ! Base16 Ashes
 ! Scheme: Jannik Siebert (https://github.com/janniks)
