@@ -16,6 +16,7 @@ set number
 " set statusline=%f\ %LL\ %cc\ %p%%
 
 set hlsearch
+hi Search cterm=NONE ctermfg=black ctermbg=darkyellow
 set showmode
 set wildmenu
 
