@@ -1,0 +1,13 @@
+diff --git a/config.def.h b/config.def.h
+index 14b90d8..877afab 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-char font[] = "Mono:pixelsize=17:antialias=true:autohint=true";
++char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+ int borderpx = 2;
+ 
+ /*
