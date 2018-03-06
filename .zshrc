@@ -136,6 +136,8 @@ setopt nonomatch
 ## Allow comments even in interactive shells
 #setopt interactivecomments
 
+## Enable terminal hotkeys
+setopt emacs
 
 ## compsys related snippets ##
 
@@ -328,6 +330,7 @@ export MANWIDTH=${MANWIDTH:-80}
 
 ## ctrl-s will no longer freeze the terminal.
 #stty erase "^?"
+stty -ixon
 
 ## you want to automatically use a bigger font on big terminals?
 #if [[ "$TERM" == "xterm" ]] && [[ "$LINES" -ge 50 ]] && [[ "$COLUMNS" -ge 100 ]] && [[ -z "$SSH_CONNECTION" ]] ; then
@@ -358,8 +361,11 @@ export LS_COLORS
 export EDITOR=$(which vim)
 export VISUAL=$EDITOR
 
-## END OF FILE #################################################################
+# Export path (better move to .xinitrc to share it with wm)
+#for dir in "$HOME/bin" "$HOME/.bin" "$HOME/.scripts"; do
+#	if [ -d "$dir" ]; then
+#		export PATH=$dir:$PATH
+#	fi
+#done
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+## END OF FILE #################################################################

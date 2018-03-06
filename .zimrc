@@ -38,7 +38,7 @@ zprompt_theme='eriner black blue green yellow'
 
 # Uncomment to enable command correction prompts
 # See: http://zsh.sourceforge.net/Doc/Release/Options.html#Input_002fOutput
-setopt CORRECT
+#setopt CORRECT
 
 #
 # Environment
