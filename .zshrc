@@ -361,6 +361,9 @@ export LS_COLORS
 export EDITOR=$(which vim)
 export VISUAL=$EDITOR
 
+# Set GPG TTY
+export GPG_TTY=$(tty)
+
 # Export path (better move to .xinitrc to share it with wm)
 #for dir in "$HOME/bin" "$HOME/.bin" "$HOME/.scripts"; do
 #	if [ -d "$dir" ]; then
