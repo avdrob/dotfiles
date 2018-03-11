@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# first of all, check wether offlineimap is running #
+systemctl --user is-active offlineimap.service >/dev/null &&
+	! systemctl --user is-failed offlineimap.service >/dev/null
+if [ ! $? -eq 0 ]; then
+	notify-send -u critical "offlineimap is not running!"
+	exit 1
+fi
+
+maildir="$HOME/.mail"
+accounts="$(find $maildir/* -maxdepth 0 -type d -printf '%f\n')"
+allnewmail=0
+
+while read -r acc; do
+	nmdir="$maildir/$acc/INBOX/new"
+	newemails="$(find $nmdir -type f | wc -l)"
+	allnewmail=$((allnewmail+newemails))
+done <<< "$accounts"
+
+echo $allnewmail
+

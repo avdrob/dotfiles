@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+# directory containing images
+IMAGEDIR="$HOME/data/images/ImgurDump"
+
+# use nitrogen to set wallpaper
+feh --randomize --bg-fill ${IMAGEDIR}/*

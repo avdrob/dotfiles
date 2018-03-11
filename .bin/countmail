@@ -1,0 +1,15 @@
+#!/bin/sh
+
+maildir="$HOME/.mail"
+accounts="$(find $maildir/* -maxdepth 0 -type d -printf '%f\n')"
+text=""
+
+while read -r acc; do
+	nmdir="$maildir/$acc/INBOX/new"
+	newemails="$(find $nmdir -type f | wc -l)"
+	text="${text}${acc}: $newemails\n"
+done <<< "$accounts"
+text="$text"
+
+# notify-send "$text"
+notify-send "New mail" "$text"
