@@ -1,0 +1,6 @@
+rofi.modi:		run
+rofi.theme:		/usr/share/rofi/themes/Adapta-Nokto.rasi
+rofi.font:		Hasklig 12
+rofi.width:		30
+rofi.lines:		10
+rofi.display-run:

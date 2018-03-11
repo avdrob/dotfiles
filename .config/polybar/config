@@ -1,0 +1,333 @@
+;[colors]
+;background = #2f343f
+;background-alt = #4f545f
+;foreground = #d8dee8
+;foreground-alt = #787e68
+;accent = #81a1c1
+;alert = #ebcb8b
+;urgent = #d65d0e
+;black = #000000
+
+[colors]
+background = #ff1d2021
+foreground = #a0ebdbb2
+foreground-alt = #90665c54
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+white = #fbf1c7
+red = #cc241d
+green = #98971a
+yellow = #d79921
+blue = #458588
+purple = #b16286
+aqua = #689d6a
+orange = #d65d0e
+
+accent = #81a1c1
+background-alt = #4f545f
+black = #000000
+
+[bar/top]
+monitor = eDP1
+fixed-center = true
+height = 32
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 2
+padding-right = 0
+module-margin-left = 1
+module-margin-right = 1
+; plaintext, bars
+font-0 = Mono:pixelsize=15;3
+; xkeyboard, wifi-signal, volume, clock, calendar, battery
+font-1 = FontAwesome:pixelsize=22;4
+; xbacklight
+font-2 = DejaVu Sans:pixelsize=20;4
+; mpd
+font-3 = Symbola:pixelsize=20;2
+; wifi, powermenu
+font-4 = MaterialIcons-Regular:pixelsize=22;6
+wm-restack = bspwm
+tray-position = right
+tray-padding = 6
+tray-background = ${colors.black}
+tray-transparent = false
+tray-maxsize = 28
+modules-left = mpd
+modules-center = xkeyboard wlan xbacklight volume clock date battery mailbox powermenu
+modules-right =
+
+[module/mpd]
+type = internal/mpd
+
+interval = 1
+
+format-online = <icon-seekb> <toggle> <icon-stop> <icon-seekf> <label-time> <label-song>
+
+label-time = %elapsed%/%total%
+label-song = %artist% - %title%
+
+label-song-maxlen = 30
+
+icon-play = ⏵
+icon-pause = ⏸
+icon-stop = ⏹
+icon-prev = ⏮
+icon-next = ⏭
+icon-seekb = ⏪
+icon-seekf = ⏩
+icon-random = 🔀
+icon-repeat = 🔁
+icon-repeatone = 🔂
+icon-consume = ✀
+
+bar-progress-width = 20
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+icon-seekb-foreground = ${colors.accent}
+icon-stop-foreground = ${colors.accent}
+icon-seekf-foreground = ${colors.accent}
+icon-play-foreground = ${colors.accent}
+icon-pause-foreground = ${colors.accent}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+
+format = <label-layout> <label-indicator>
+format-spacing = 0
+
+format-prefix = " "
+format-prefix-foreground = ${colors.accent}
+
+label-layout = %layout%
+label-layout-foreground = ${colors.foreground}
+
+label-indicator = %name%
+label-indicator-padding = 1
+label-indicator-margin = 1
+label-indicator-background = ${colors.background}
+label-indicator-foreground = ${colors.foreground}
+
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 15
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+format-disconnected = <label-disconnected> DC'D
+label-disconnected = 🙁
+label-disconnected-foreground = ${colors.accent}
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-5 = 
+
+ramp-signal-foreground = ${colors.accent}
+
+[module/volume]
+type = internal/alsa
+
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+master-mixer = Master
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+headphone-id = 15
+
+format-volume = <ramp-volume> <bar-volume>
+ramp-volume-foreground = ${colors.accent}
+
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+bar-volume-width = 6
+bar-volume-indicator =❙
+bar-volume-fill = ─
+bar-volume-empty = ─
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+format-muted = <label-muted> MUTE
+label-muted = 🔇
+label-muted-foreground= ${colors.accent}
+format-muted-foreground = ${colors.accent}
+
+ramp-headphones-foreground = ${colors.accent}
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+[module/xbacklight]
+type = internal/xbacklight
+
+enable-scroll = false
+
+format = <ramp> <bar>
+
+ramp-foreground = ${colors.accent}
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+bar-width = 6
+bar-indicator =❙
+bar-fill = ─
+bar-empty = ─
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 5
+
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.accent}
+
+format-full = <label-full> FULL
+label-full = 
+label-full-foreground = ${colors.accent}
+
+format-discharging = <ramp-capacity>  <label-discharging>
+label-discharging = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.accent}
+
+[module/clock]
+type = internal/date
+interval = 5.0
+time = %H:%M
+label = " %time%"
+format-prefix = 
+format-prefix-foreground = ${colors.accent}
+
+[module/date]
+type = internal/date
+interval = 30.0
+date = %d.%m.%Y
+label = " %date%"
+format-prefix = 
+format-prefix-foreground = ${colors.accent}
+
+[module/mailbox]
+type = custom/script
+exec = checkmbox
+interval = 15
+
+format = <label>
+label = %output:1:3%
+label-padding = 1
+format-prefix = 
+format-prefix-foreground = ${colors.accent}
+
+click-left = countmail
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+format = <label-toggle> <menu>
+label-open = 
+label-open-foreground = ${colors.accent}
+label-close = 
+label-close-foreground = ${colors.accent}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = RBT
+menu-0-0-exec = menu-open-1
+menu-0-1 = SHDN
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = YES
+menu-1-0-exec = reboot
+menu-1-1 = NO
+menu-1-1-exec = menu-open-0
+
+menu-2-0 = YES
+menu-2-0-exec = poweroff
+menu-2-1 = NO
+menu-2-1-exec = menu-open-0
+
+[bar/bottom]
+monitor = eDP1
+;width sizes calculated carefully
+fixed-center = true
+width = 38%
+offset-x = 595
+height = 36
+bottom = true
+enable-ipc = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 4
+padding-right = 4
+module-margin-left = 2
+module-margin-right = 2
+font-0 = FontAwesome:pixelsize=20;3
+font-1 = DejaVu Sans:pixelsize=22;4
+font-2 = Symbola:pixelsize=20;3
+wm-restack = bspwm
+modules-left=
+modules-center = bspwm
+modules-right=
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = I;①-
+ws-icon-1 = II;②-
+ws-icon-2 = III;③-
+ws-icon-3 = IV;④-
+ws-icon-4 = V;⑤-
+ws-icon-5 = VI;⑥-🖺
+ws-icon-6 = VII;⑦-
+ws-icon-7 = VIII;⑧-
+ws-icon-8 = IX;⑨-📺
+ws-icon-9 = X;⑩-♬
+ws-icon-default = ♟
+
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-background= ${colors.background-alt}
+label-focused-padding = 1
+
+label-occupied = %icon%
+label-occupied-padding = 1
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
+
+; vim:ft=dosini

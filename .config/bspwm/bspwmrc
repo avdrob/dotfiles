@@ -1,0 +1,60 @@
+#! /bin/sh
+
+###################### Launch daemons ######################
+killall -q sxhkd
+while pgrep -u $UID -x sxhkd >/dev/null; do sleep 1; done
+sxhkd &
+
+killall -q compton
+while pgrep -u $UID -x compton >/dev/null; do sleep 1; done
+compton -c -b
+
+killall -q dropbox
+while pgrep -u $UID -x dropbox >/dev/null; do sleep 1; done
+dropbox &
+
+killall -q polybar
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+polybar top &
+polybar bottom &
+
+killall -q cmst
+while pgrep -u $UID -x cmst >/dev/null; do sleep 1; done
+cmst -m &
+############################################################
+
+# Set wallpaper
+random_wallpaper
+
+# Keyboard layout switching
+setxkbmap -layout us,ru -option "grp:alt_shift_toggle"
+
+# Focus following mouse
+bspc config focus_follows_pointer true
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+# bspc monitor -d ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩
+
+bspc config border_width         2
+# bspc config -w focused border_width 40
+bspc config window_gap          10
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a st-256color:floating state=floating
+bspc rule -a Chromium desktop='^2'
+bspc rule -a Pcmanfm desktop='^4'
+bspc rule -a Evince desktop='^5'
+bspc rule -a Libreoffice desktop='^6'
+bspc rule -a TelegramDesktop desktop='^7'
+bspc rule -a VK desktop='^7'
+bspc rule -a mpv desktop='^9'
+bspc rule -a Vlc desktop='^9'
+bspc rule -a Deadbeef desktop='^10'
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
