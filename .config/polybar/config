@@ -29,7 +29,7 @@ background-alt = #4f545f
 black = #000000
 
 [bar/top]
-monitor = eDP1
+monitor = eDP-1
 fixed-center = true
 height = 32
 background = ${colors.background}
@@ -42,7 +42,7 @@ module-margin-right = 1
 font-0 = Mono:pixelsize=15;3
 ; xkeyboard, wifi-signal, volume, clock, calendar, battery
 font-1 = FontAwesome:pixelsize=22;4
-; xbacklight
+; backlight
 font-2 = DejaVu Sans:pixelsize=20;4
 ; mpd
 font-3 = Symbola:pixelsize=20;2
@@ -55,7 +55,7 @@ tray-background = ${colors.black}
 tray-transparent = false
 tray-maxsize = 28
 modules-left = mpd
-modules-center = xkeyboard wlan xbacklight volume clock date battery mailbox powermenu
+modules-center = xkeyboard wlan backlight volume clock date battery mailbox powermenu
 modules-right =
 
 [module/mpd]
@@ -97,6 +97,7 @@ icon-pause-foreground = ${colors.accent}
 type = internal/xkeyboard
 
 blacklist-0 = num lock
+blacklist-1 = caps lock
 
 format = <label-layout> <label-indicator>
 format-spacing = 0
@@ -134,6 +135,8 @@ ramp-signal-foreground = ${colors.accent}
 [module/volume]
 type = internal/alsa
 
+interval = 0.5
+
 master-soundcard = default
 speaker-soundcard = default
 headphone-soundcard = default
@@ -165,10 +168,11 @@ ramp-headphones-foreground = ${colors.accent}
 ramp-headphones-0 = 
 ramp-headphones-1 = 
 
-[module/xbacklight]
-type = internal/xbacklight
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
 
-enable-scroll = false
+interval = 0.5
 
 format = <ramp> <bar>
 
@@ -278,7 +282,7 @@ menu-2-1 = NO
 menu-2-1-exec = menu-open-0
 
 [bar/bottom]
-monitor = eDP1
+monitor = eDP-1
 ;width sizes calculated carefully
 fixed-center = true
 width = 38%
