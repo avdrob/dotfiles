@@ -62,7 +62,7 @@ super + y
 	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
 
 # swap the current node and the biggest node
-super + g
+super + x
 	bspc node -s biggest
 
 #
@@ -181,11 +181,11 @@ XF86AudioPrev
 
 # Increase by 5%
 XF86MonBrightnessUp
-	xbacklight -inc 5
+	light -A 5
 
 # Decrease by 5%
 XF86MonBrightnessDown
-	xbacklight -dec 5
+	light -U 5
 
 # Take screenshot
 Print
