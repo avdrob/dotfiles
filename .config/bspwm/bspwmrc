@@ -47,13 +47,16 @@ bspc rule -a st-256color:floating state=floating
 bspc rule -a Chromium desktop='^2'
 bspc rule -a Pcmanfm desktop='^4'
 bspc rule -a Evince desktop='^5'
-bspc rule -a Libreoffice desktop='^6'
+bspc rule -a libreoffice-startcenter desktop='^6'
+bspc rule -a libreoffice-writer desktop='^6'
+bspc rule -a libreoffice-calc desktop='^6'
+bspc rule -a libreoffice-impress desktop='^6'
 bspc rule -a TelegramDesktop desktop='^7'
 bspc rule -a VK desktop='^7'
-bspc rule -a mpv desktop='^9'
-bspc rule -a Vlc desktop='^9'
+bspc rule -a Vmware desktop='^8'
+bspc rule -a Gnome-mpv desktop='^9'
 bspc rule -a Deadbeef desktop='^10'
-bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Deluge desktop='^10'
 
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
