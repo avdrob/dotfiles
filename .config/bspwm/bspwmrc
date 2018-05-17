@@ -9,9 +9,9 @@ killall -q compton
 while pgrep -u $UID -x compton >/dev/null; do sleep 1; done
 compton -c -b
 
-killall -q dropbox
-while pgrep -u $UID -x dropbox >/dev/null; do sleep 1; done
-dropbox &
+# killall -q dropbox
+# while pgrep -u $UID -x dropbox >/dev/null; do sleep 1; done
+# dropbox &
 
 killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
