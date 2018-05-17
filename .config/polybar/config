@@ -133,7 +133,7 @@ ramp-signal-5 = 
 ramp-signal-foreground = ${colors.accent}
 
 [module/volume]
-type = internal/alsa
+type = internal/volume
 
 interval = 0.5
 
