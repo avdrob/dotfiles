@@ -51,7 +51,10 @@ fi
 # Export path
 for dir in "$HOME/bin" "$HOME/.bin" "$HOME/.scripts"; do
 	if [ -d "$dir" ]; then
-		export PATH=$dir:$PATH
+		echo "$PATH" | grep -q "$dir"
+		if [ "$?" -ne 0 ]; then
+			export PATH=$dir:$PATH
+		fi
 	fi
 done
 
