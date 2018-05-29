@@ -10,7 +10,10 @@ set noexpandtab
 
 set colorcolumn=81
 highlight ColorColumn ctermbg=124
-set number
+set number relativenumber
+
+set cursorline
+highlight Cursorline cterm=bold ctermbg=0*
 
 " set laststatus=2
 " set statusline=%f\ %LL\ %cc\ %p%%
@@ -40,9 +43,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 " Plugin 'vim-syntastic/syntastic'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'vimwiki/vimwiki'
+Plugin 'xuhdev/vim-latex-live-preview'
 
 call vundle#end()            " required
 
@@ -54,6 +58,9 @@ let g:airline_theme ='alduin'
 
 " air-line
 let g:airline_powerline_fonts = 1
+
+" vim-latex-live-preview options
+" let g:livepreview_previewer = 'mupdf'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
