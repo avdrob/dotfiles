@@ -1,6 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+syntax on
+colorscheme desert
+
 filetype plugin indent on
 syn on se title
 set tabstop=8
@@ -47,6 +50,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'vimwiki/vimwiki'
 Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'fatih/vim-go'
 
 call vundle#end()            " required
 
