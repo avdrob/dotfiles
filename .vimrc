@@ -2,21 +2,21 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 syntax on
-colorscheme desert
+colorscheme default
 
 filetype plugin indent on
 syn on se title
-set tabstop=8
-set softtabstop=8
-set shiftwidth=8
-set noexpandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 set colorcolumn=81
 highlight ColorColumn ctermbg=124
 set number relativenumber
 
 set cursorline
-highlight Cursorline cterm=bold ctermbg=0*
+highlight Cursorline ctermbg=0*
 
 " set laststatus=2
 " set statusline=%f\ %LL\ %cc\ %p%%
