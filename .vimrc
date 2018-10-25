@@ -48,6 +48,16 @@ set <F8>=[19~
 set <F9>=[20~
 set <F10>=[21~
 
+" tab navigation
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnew<CR>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
